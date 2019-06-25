@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "c41071ad-6bf3-42f7-b5b1-31b4ca7a0879",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "bed_ladder_shadow": {
+      "ver": "1.0.4",
+      "uuid": "10edb67b-a96f-4ddf-9c07-9c3dd8409c72",
+      "rawTextureUuid": "c41071ad-6bf3-42f7-b5b1-31b4ca7a0879",
+      "trimType": "custom",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 683,
+      "height": 439,
+      "rawWidth": 683,
+      "rawHeight": 439,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
