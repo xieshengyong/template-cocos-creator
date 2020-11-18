@@ -1,3 +1,9 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable guard-for-in */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable max-params */
+/* eslint-disable @typescript-eslint/prefer-optional-chain */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-expressions */
 export default {
     res: {},
@@ -13,7 +19,7 @@ export default {
             // console.log(completedCount, totalCount);
             processback && processback(completedCount, totalCount);
         }, (err, assets, urls) => {
-            for (var i = 0; i < assets.length; i++) {
+            for (let i = 0; i < assets.length; i++) {
                 let curAss = assets[i];
                 let namePart = urls[i].split('/');
                 let name = namePart[namePart.length - 1];
@@ -24,7 +30,7 @@ export default {
                 } else if (typeof curAss === 'string') {
                     res['url_' + name] = curAss;
                 } else if (curAss instanceof cc.SpriteAtlas) {
-                    var frames = curAss.getSpriteFrames();
+                    let frames = curAss.getSpriteFrames();
                     frames.forEach((element) => {
                         res[element.name] = element;
                     });

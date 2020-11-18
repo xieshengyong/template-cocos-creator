@@ -28,8 +28,8 @@ cc.Class({
     },
 
     fadeOut () {
-        this.node.runAction(cc.fadeOut(this.duration))
-    }
+        this.node.runAction(cc.fadeOut(this.duration));
+    },
 
     // update (dt) {},
 });

@@ -52,7 +52,13 @@ cc.Class({
     shakeStart () {
         var sv = cc.v2(0, this.distance);
         let time = 0.02 * 1 / this.speed;
-        this.node.runAction(
+        if (this.isAtion) {
+            this.node.stopAllActions();
+            this.isAtion = false;
+            return;
+        }
+        this.isAtion = true;
+        this.node.runAction(cc.sequence(
             cc.repeat(
                 cc.sequence(
                     cc.moveTo(time, sv.rotate(Math.PI / 4 * (0 * 3) % 8)),
@@ -65,8 +71,11 @@ cc.Class({
                     cc.moveTo(time, sv.rotate(Math.PI / 4 * (7 * 3) % 8)),
                     cc.delayTime(this.repeatInterval),
                 ),
-            this.repeatTimes)
-        );
+            this.repeatTimes),
+            cc.callFunc(() => {
+                this.isAtion = false;
+            })
+        ));
     }
 
     // update (dt) {},

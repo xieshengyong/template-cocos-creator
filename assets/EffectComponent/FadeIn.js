@@ -17,18 +17,38 @@ cc.Class({
             displayName: '动画时间（s）',
             type: cc.Float
         },
+        clickEvents: {
+            default: [],
+            type: cc.Component.EventHandler,
+            tooltip: CC_DEV && 'i18n:COMPONENT.button.click_events',
+        },
+        // designResolution: {
+        //     get: function () {
+        //         return cc.v2(1, 1);
+        //     },
+        //     set: function (value) {
+        //         // this._designResolution.width = value.width;
+        //         // this._designResolution.height = value.height;
+        //         // this._designResolution.height1 = value.height1;
+        //         // this.applySettings();
+        //         // this.alignWithScreen();
+        //     },
+        //     tooltip: CC_DEV && 'i18n:COMPONENT.canvas.design_resolution'
+        // },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start() {
-
+    start () {
+        // console.log(this.clickEvents);
+        // cc.Component.EventHandler.emitEvents(this.clickEvents, this);
     },
 
-    fadeIn() {
-        this.node.runAction(cc.fadeIn(this.duration))
+    fadeIn () {
+        cc.Component.EventHandler.emitEvents(this.clickEvents, this);
+        this.node.runAction(cc.fadeIn(this.duration));
     }
 
     // update (dt) {},

@@ -1,0 +1,73 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": false,
+		"newFeature": false,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"useMultiFrameRuntime": true,
+		"useApiHook": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"packNpmManually": false,
+		"packNpmRelationList": []
+	},
+	"compileType": "game",
+	"libVersion": "game",
+	"appid": "wx9279e34eef1eef8b",
+	"projectname": "guangbenqihuan",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"plugin": {
+			"list": []
+		},
+		"game": {
+			"list": [
+				{
+					"pathName": "",
+					"name": "game3",
+					"query": "_game=2",
+					"scene": null
+				},
+				{
+					"pathName": "",
+					"name": "game2",
+					"query": "_game=1",
+					"scene": null
+				},
+				{
+					"name": "game1",
+					"pathName": "",
+					"query": "_game=0",
+					"scene": null
+				}
+			]
+		},
+		"gamePlugin": {
+			"list": []
+		},
+		"miniprogram": {
+			"list": []
+		}
+	}
+}
