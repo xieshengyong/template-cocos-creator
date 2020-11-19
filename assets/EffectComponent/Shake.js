@@ -50,7 +50,7 @@ cc.Class({
     },
 
     shakeStart () {
-        var sv = cc.v2(0, this.distance);
+        let sv = cc.v2(0, this.distance);
         let time = 0.02 * 1 / this.speed;
         if (this.isAtion) {
             this.node.stopAllActions();
@@ -71,7 +71,7 @@ cc.Class({
                     cc.moveTo(time, sv.rotate(Math.PI / 4 * (7 * 3) % 8)),
                     cc.delayTime(this.repeatInterval),
                 ),
-            this.repeatTimes),
+                this.repeatTimes),
             cc.callFunc(() => {
                 this.isAtion = false;
             })

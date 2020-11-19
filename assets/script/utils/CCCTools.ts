@@ -2,7 +2,7 @@
  * Cocos Creator工具方法集
  * @Author: xieshengyong
  * @Date: 2020-08-27 15:30:54
- * @LastEditTime: 2020-11-17 18:26:36
+ * @LastEditTime: 2020-11-19 16:28:51
  * @LastEditors: xieshengyong
  */
 
@@ -16,4 +16,13 @@ export const getResUrl = (url: string) => {
         path = cc.loader.md5Pipe.transformURL(path);
     }
     return path;
+};
+
+/**
+* 获取两节点在世界坐标系下之间的距离差，返回cc.v2
+*/
+export const getNodeWorldDistance = (nodeA: cc.Node, nodeB: cc.Node): cc.Vec2 => {
+    let pos1 = nodeA.convertToWorldSpaceAR(cc.v2(0, 0));
+    let pos2 = nodeB.convertToWorldSpaceAR(cc.v2(0, 0));
+    return pos2.sub(pos1);
 };

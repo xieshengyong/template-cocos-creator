@@ -1,3 +1,9 @@
+/*
+ * @Author: xieshengyong
+ * @Date: 2020-10-13 16:27:40
+ * @LastEditTime: 2020-11-19 16:45:01
+ * @LastEditors: xieshengyong
+ */
 const { ccclass, property } = cc._decorator;
 
 /**

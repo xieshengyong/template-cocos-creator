@@ -6,20 +6,21 @@ let canvas: cc.Node;
 
 @ccclass
 export default class Main extends cc.Component {
-    public onLoad () {
-        console.log('load');
+    public async onLoad () {
+        console.log("load");
         this.initProject();
 
         canvas = cc.Canvas.instance.node;
     }
 
-    public start () {}
+    public async start () {
+    }
 
     private initProject () {
-        // const manager = cc.director.getCollisionManager();
-        // manager.enabled = true;
-        // 开启绘制显示
-        // manager.enabledDebugDraw = true;
+    // const manager = cc.director.getCollisionManager();
+    // manager.enabled = true;
+    // 开启绘制显示
+    // manager.enabledDebugDraw = true;
 
         // 设置为横屏模式
         // cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE);

@@ -3,7 +3,7 @@
  * 基础通用工具方法集
  * @Author: xieshengyong
  * @Date: 2020-08-27 15:05:24
- * @LastEditTime: 2020-11-18 11:25:19
+ * @LastEditTime: 2020-11-19 16:25:28
  * @LastEditors: xieshengyong
  */
 
@@ -23,10 +23,11 @@ export const getRandom = (m: number, n: number, Integer = 'floor'): number => {
 
 /**
  * 为数字添加千位分隔符
- * el: formatNum(10001) => 10,001
- *     formatNum(123456789) => 123,456,789
  *  @param {number} num
  *  @param {string} dot 分隔符，默认英文逗号
+ *  @example
+ *  formatNum(10001) // 10,001
+ *  formatNum(123456789) // 123,456,789
  */
 export const formatNum = (num: number, dot = ','): string => {
     return num.toString().replace(/\d{1,3}(?=(\d{3})+$)/g, function (s) {
@@ -44,6 +45,64 @@ export const delay = (time: number): Promise<any> => {
             resolve();
         }, time * 1000);
     });
+};
+
+/**
+ * 深复制拷贝对象
+ * @param source object
+ */
+export const clone = (source: object): object => {
+    if (typeof source !== 'object') return source;
+
+    let target: object;
+
+    if (source instanceof Array) {
+        target = [];
+        for (let i = 0; i < source.length; i++) {
+            // 避免一层死循环 a.b = a
+            target[i] = source[i] === source ? target : clone(source[i]);
+        }
+    } else if (source instanceof Object) {
+        target = {};
+        for (let key in source) {
+            if (source.hasOwnProperty(key)) {
+                // 避免一层死循环 a.b = a
+                target[key] = source[key] === source ? target : clone(source[key]);
+            }
+        }
+    }
+    return target;
+};
+
+/**
+ * 深层合并对象，相同属性时，后面的覆盖前面的；
+ * @param obj1 object
+ * @param obj2 object
+ * @example
+ * const obj1 = {a: {b: 1}, b: [1,1]}
+ * const obj2 = {a: {c: 3, d: 3}, b : [3]}
+ * merge(obj1, obj2) // {a: {b: 1, c:3, d: 3}, b: [3]};
+ */
+export const merge = (obj1: object, obj2: object): object => {
+    let newObj1 = clone(obj1);
+    let newObj2 = clone(obj2);
+
+    for (let key in newObj2) {
+        if (newObj2.hasOwnProperty(key)) {
+            if (Object.prototype.toString.call(newObj2[key]) === '[object Object]') {
+                newObj1[key] = merge(newObj1[key], newObj2[key]);
+            } else if (Object.prototype.toString.call(newObj2[key]) === '[object Array]') {
+                if (newObj1[key]) {
+                    newObj1[key] = merge(newObj1[key], newObj2[key]);
+                } else {
+                    newObj1[key] = newObj2[key];
+                }
+            } else {
+                newObj1[key] = newObj2[key];
+            }
+        }
+    }
+    return newObj1;
 };
 
 /**

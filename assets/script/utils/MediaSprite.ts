@@ -133,7 +133,6 @@ export default class MediaSprite {
      */
     public onStart (callback) {
         this.startedCallback.push(callback);
-
     }
 
     private createMedia () {
@@ -299,5 +298,4 @@ export default class MediaSprite {
             document.body.addEventListener('click', videoCtrInit2);
         }
     }
-
 };
