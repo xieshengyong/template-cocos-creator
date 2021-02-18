@@ -1,12 +1,16 @@
 /*
  * @Author: xieshengyong
  * @Date: 2019-12-10 01:01:51
- * @LastEditTime: 2020-11-19 16:54:31
+ * @LastEditTime: 2020-12-14 10:03:27
  * @LastEditors: xieshengyong
  */
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 
 // TODO: 固化动画设置
+/* 参考地址
+    https://forum.cocos.org/t/resources/66408
+    https://forum.cocos.org/t/cc-loader-prefab/42930
+*/
 
 const { ccclass, property, executeInEditMode } = cc._decorator;
 

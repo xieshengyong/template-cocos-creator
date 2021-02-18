@@ -2,7 +2,7 @@
 /*
  * @Author: xieshengyong
  * @Date: 2019-05-29 16:10:46
- * @LastEditTime: 2020-11-17 17:21:30
+ * @LastEditTime: 2020-12-30 20:03:47
  * @LastEditors: xieshengyong
  */
 
@@ -14,7 +14,7 @@ export default {
      * @param {*} callback callback
      */
     hideNode (para: cc.Node | cc.Node[], dur: number, callback?: Function, delay = 0) {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             let cb = callback;
             this._orderly(para, (node) => {
                 cc.tween(node)
@@ -38,7 +38,7 @@ export default {
      * @param {*} callback callback
      */
     showNode (para: cc.Node[] | cc.Node, dur: number, callback?: Function, delay = 0) {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             let cb = callback;
             this._orderly(para, (node) => {
                 node.opacity = 0;

@@ -3,7 +3,7 @@
  * 基础通用工具方法集
  * @Author: xieshengyong
  * @Date: 2020-08-27 15:05:24
- * @LastEditTime: 2020-11-19 16:25:28
+ * @LastEditTime: 2020-12-30 20:17:06
  * @LastEditors: xieshengyong
  */
 
@@ -40,7 +40,7 @@ export const formatNum = (num: number, dot = ','): string => {
  * @param {number} time Unit seconds
  */
 export const delay = (time: number): Promise<any> => {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         setTimeout(() => {
             resolve();
         }, time * 1000);
